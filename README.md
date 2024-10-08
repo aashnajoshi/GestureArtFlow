@@ -7,16 +7,24 @@ An AI-driven system that translates hand gestures into digital art, allowing use
 - User-friendly interface.
 
 ## Usage
-### Install required libraries:
+### All required libraries can be installed using a single-line command:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the code:
+### While to run the code:
+#### Console-based version:
 ```bash
 python main.py
+python {file_name}.py
+
+```
+#### Streamlit-based version:
+```bash
+streamlit run app.py
 ```
 
 ## Description of various files:
+- **app.py:** Contains a streamlit-based version of the main code.
 - **main.py:** Core program for gesture recognition and art generation.
 - **requirements.txt:** File containing all required Python modules.
