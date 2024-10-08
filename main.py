@@ -1,26 +1,18 @@
-"""
-Install all required packages:
-run 'pip install -r requirements.txt'
-
-"""
 import cv2
 import numpy as np
 import mediapipe as mp
 from collections import deque
 
-
-def exit_button_pressed():  # exit
+def exit_button_pressed():
     cap.release()
     cv2.destroyAllWindows()
     exit()
-
 
 # Giving different arrays to handle colour points of different colour
 bpoints = [deque(maxlen=1024)]
 gpoints = [deque(maxlen=1024)]
 rpoints = [deque(maxlen=1024)]
 ypoints = [deque(maxlen=1024)]
-
 
 # These indexes will be used to mark the points in particular arrays of specific colour
 blue_index = 0
@@ -112,7 +104,6 @@ cv2.resizeWindow("Paint", 600, 400)
 mpHands = mp.solutions.hands
 hands = mpHands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mpDraw = mp.solutions.drawing_utils
-
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
@@ -280,10 +271,8 @@ while ret:
                 if points[i][j][k - 1] is None or points[i][j][k] is None:
                     continue
                 cv2.line(frame, points[i][j][k - 1], points[i][j][k], colors[i], 2)
-                cv2.line(
-                    paintWindow, points[i][j][k - 1], points[i][j][k], colors[i], 2
-                )
-
+                cv2.line(paintWindow, points[i][j][k - 1], points[i][j][k], colors[i], 2)
+                
     cv2.imshow("Output", frame)
     cv2.imshow("Paint", paintWindow)
 
