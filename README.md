@@ -16,9 +16,8 @@ pip install -r requirements.txt
 #### Console-based version:
 ```bash
 python main.py
-python {file_name}.py
-
 ```
+
 #### Streamlit-based version:
 ```bash
 streamlit run app.py
